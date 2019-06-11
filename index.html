@@ -8,16 +8,26 @@
 	<meta name="author" content="Kibae Kim">
 	<meta http-equiv="content-language" conent="en-us"/>
 
-	<link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+	<link href="./resources/css/style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
 	<h1>
 		Panoptic Post
 	</h1>
-
-	<div class="search">
-		<input type="text" placeholder="Search">
-	</div>
+	<header role="banner" id="PP-header">
+		<div class="container">
+			<div class="topnav">
+				<a class="active" href="#home">Panoptic Post</a>
+				<a href="#login">Login</a>
+				<a href="#register">Register</a>
+				<div class="search-container">
+					<form action="/actionpage.php">
+						<input type="text" placeholder="Search..." name="search">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+			</div>
+		</div>
+	</header>
 </body>
 </html>
