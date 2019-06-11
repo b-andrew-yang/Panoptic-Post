@@ -1,9 +1,3 @@
-h1{
-	font-family: escrow-compressed, serif;
-	font-style: normal;
-	font-weight: 700
-}
-
 .topnav {
 	overflow: hidden;
 	background-color: #e9e9e9;
@@ -22,6 +16,13 @@ h1{
 .topnav a:hover {
 	background-color: #ddd;
 	color: black;
+}
+
+#home-button {
+	font-family: escrow-compressed, serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
 }
 
 .topnav a.active{
