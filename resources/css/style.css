@@ -1,6 +1,11 @@
 .topnav {
 	overflow: hidden;
-	background-color: #FFFFFF;
+	height: 90px;
+	background-color: #138C99;
+	/*
+		Color options:
+			Aqua-ish: #138C99;
+	*/
 }
 
 .topnav a {
@@ -8,7 +13,7 @@
 	display: block;
 	color: black;
 	text-align: center;
-	padding: 14px;
+	/*padding: 14px;*/
 	text-decoration: none;
 	font-size: 17px;
 	vertical-align: middle;
@@ -24,7 +29,11 @@
 	font-style: normal;
 	font-weight: 700;
 	font-size: 30px;
+	margin-top: 21px;
 	margin-left: 18px;
+	/*border: solid;
+	color: #000000;*/
+	background: #FFFFFF;
 }
 
 #login-button {
@@ -42,11 +51,10 @@
 	float: center;
 }
 
-.topnav input[type=text] {
+/*.topnav input[type=text] {
 	float: center;
 	padding: 6px;
 	border: none;
-	margin-top: 8px;
 	margin-right: 16px;
 	font-size: 17px;
 }
@@ -54,9 +62,9 @@
 .topnav .search-container {
 	float: right;
 	padding: 6px 10px;
-	margin-top: 8px;
+	margin-top: 21px;
 	margin-right: 16px;
-	background: #FFFFFF;
+	background: #138C99;
 	font-size: 17px;
 	border: none;
 	cursor: pointer;
@@ -64,10 +72,45 @@
 
 .topnav .search-container button:hover {
 	background: #ccc;
+}*/
+
+.topnav input[type=text] {
+	float: right;
+	width: 40px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-sze: 16px;
+	background-color: #138C99;
+	background-image: url('searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	margin-top: 21px;
+	margin-right: 40px;
+	padding: 12px 0px 8px 40px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+.topnav input[type=text]:focus {
+	width: 25%;
+	background-color: white;
+}
+
+.topnav button[type=button] {
+	float: right;
+	background-color: #138C99;
+	margin-right: 15px;
+	margin-top: 0px;
+	/*padding: 8px 10px;*/
 }
 
 #search-bar {
 	border: solid;
+}
+
+#search-button {
+	margin-top: 5px;
 }
 
 .subject-nav {

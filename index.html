@@ -8,24 +8,29 @@
 	<meta name="author" content="Kibae Kim">
 	<meta http-equiv="content-language" conent="en-us"/>
 
-	<link href="./resources/css/style.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="./resources/css/style.css" type="text/css" >
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 </head>
 
 <body>
-	<!--<h1>
-		Panoptic Post
-	</h1>-->
 	<header role="banner" id="PP-header">
 		<div class="container">
 			<div class="topnav">
 				<a href="#home" id="home-button">Panoptic Post</a>
 				<!--<a href="#login" id="login-button">Login/Register</a>-->
 				<!--<a href="#register">Register</a>-->
-				<div class="search-container">
+				<!--<div class="search-container">
 					<form action="/actionpage.php">
 						<input type="text" placeholder="Search..." name="search" id="search-bar">
-						<button type="submit"><i class="fa fa-search"></i></button>
-					</form>
+						<button type="submit" id="search-button"><i class="material-icons">search</i></button>
+					</form>-->
+				<form action="/loginpage.php">
+					<button type="button" id="login-button"><i class="material-icons">account_box</i></button>
+				</form>
+				<form>
+					<input type="text" name="search">
+				</form>	
 			</div>
 		</div>     
 		<div class="container">
