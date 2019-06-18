@@ -1,5 +1,5 @@
 let globalData;
-var url = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=f84cbefa09be416fad9c35bed0246247";
+var url = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-05-18&sortBy=publishedAt&apiKey=f84cbefa09be416fad9c35bed0246247";
 
 
 function setup() {
