@@ -18,12 +18,16 @@ function gotData(data){
 function myFunction() {
 	// document.getElementById("demo").innerHTML = globalData["articles"][0]["author"];
 	var author = globalData["articles"][0]["author"].toString();
-	var source = globalData["articles"][0]["source"]["name"];
+	var source = globalData["articles"][0]["url"];
 	var content = globalData["articles"][0]["content"];
 	var title = globalData["articles"][0]["title"];
 
 	var output = title.concat("<br>", author, "<br>", source, "<br>", content, "<br>");
-	document.getElementById("demo").innerHTML = output;
+	// document.getElementById("demo").innerHTML = output;
+	document.getElementById("title").innerHTML = title;
+	document.getElementById("author").innerHTML = author;
+	document.getElementById("content").innerHTML = content;
+	document.getElementById("source").innerHTML = source;
 }
 
 function draw() {
