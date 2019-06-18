@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +30,7 @@
 				<form action="/loginpage.php">
 					<button type="button" id="login-button"><i class="material-icons">account_box</i></button>
 				</form>
-				<form action="./php/search_action.php">
+				<form action="/php/search_action.php">
 					<input type="text" name="search">
 				</form>	
 			</div>
