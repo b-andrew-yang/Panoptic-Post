@@ -1,5 +1,5 @@
 let globalData;
-var url = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-05-18&sortBy=publishedAt&apiKey=f84cbefa09be416fad9c35bed0246247";
+var url = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-05-18&sortBy=publishedAt&apiKey=7c41bebdc9a54da1ad3041b9b5fde554";
 
 
 function setup() {
@@ -26,7 +26,7 @@ function myFunction() {
 	// document.getElementById("demo").innerHTML = output;
 	document.getElementById("title").innerHTML = title;
 	document.getElementById("author").innerHTML = author;
-	document.getElementById("content").innerHTML = content;
+	document.getElementById("content").innerHTML = "hello";
 	document.getElementById("source").innerHTML = source;
 }
 

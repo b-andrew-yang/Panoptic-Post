@@ -25,7 +25,7 @@
 }*/
 
 #home-button {
-	font-family: escrow-compressed, serif;
+	font-family: esc-compressed, serif;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 30px;
@@ -164,4 +164,29 @@
 
 .box .row.footer {
 	flex: 0 1 40px;
+}
+
+#title {
+	font-family: Arial;
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#author {
+	font-family: Arial;
+	color: black;
+	font-size: 15px;
+}
+
+#content {
+	font-family: Arial;
+	color: black;
+	font-size: 18px;
+}
+
+#source {
+	font-family: Arial;
+	color: blue;
+	font-size: 18px;
 }
