@@ -1,6 +1,10 @@
 let globalData;
-var url = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-05-18&sortBy=publishedAt&apiKey=7c41bebdc9a54da1ad3041b9b5fde554";
+var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=9d0061d2a21f43efab81299a242f0c68";
 
+window.onload = function() {
+	setup();
+	myFunction();
+}
 
 function setup() {
 	createCanvas(200,200);
@@ -17,10 +21,11 @@ function gotData(data){
 
 function myFunction() {
 	// document.getElementById("demo").innerHTML = globalData["articles"][0]["author"];
-	var author = globalData["articles"][0]["author"].toString();
-	var source = globalData["articles"][0]["url"];
+	var author = globalData["articles"][0]["author"];
+	var source = globalData["articles"][0]["url"].toString();
 	var content = globalData["articles"][0]["content"];
 	var title = globalData["articles"][0]["title"];
+	var image = globalData["articles"][0]["urlToImage"];
 
 	var output = title.concat("<br>", author, "<br>", source, "<br>", content, "<br>");
 	// document.getElementById("demo").innerHTML = output;
@@ -28,6 +33,7 @@ function myFunction() {
 	document.getElementById("author").innerHTML = author;
 	document.getElementById("content").innerHTML = content;
 	document.getElementById("source").innerHTML = source;
+	document.getElementById("image").src = image;
 }
 
 function draw() {

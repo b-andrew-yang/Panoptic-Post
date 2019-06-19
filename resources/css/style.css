@@ -190,3 +190,13 @@
 	color: blue;
 	font-size: 18px;
 }
+
+#image {
+	height: 20%;
+	width: 30%;
+}
+
+#story-button {
+	position: relative;
+	margin-top: 40px;
+}
