@@ -1,11 +1,6 @@
 let globalData;
 var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=9d0061d2a21f43efab81299a242f0c68";
 
-window.onload = function() {
-	setup();
-	myFunction();
-}
-
 function setup() {
 	createCanvas(200,200);
 	loadJSON(url, gotData);
@@ -19,9 +14,9 @@ function gotData(data){
 	// document.write(data["articles"][0]["author"]);
 }
 
-function myFunction() {
+function populateBox() {
 	// document.getElementById("demo").innerHTML = globalData["articles"][0]["author"];
-	var author = globalData["articles"][0]["author"];
+	/*var author = globalData["articles"][0]["author"];
 	var source = globalData["articles"][0]["url"].toString();
 	var content = globalData["articles"][0]["content"];
 	var title = globalData["articles"][0]["title"];
@@ -33,7 +28,46 @@ function myFunction() {
 	document.getElementById("author").innerHTML = author;
 	document.getElementById("content").innerHTML = content;
 	document.getElementById("source").innerHTML = source;
-	document.getElementById("image").src = image;
+	document.getElementById("image").src = image;*/
+
+	var numArticles = 10;
+
+	for(i = 1; i< numArticles; i++){
+		var titleNode = document.createElement("P");
+		titleNode.innerHTML = globalData["articles"][i]["title"];
+		titleNode.style.fontFamily = "Arial";
+		titleNode.style.color = "black";
+		titleNode.style.fontWeight = "bold";
+		titleNode.style.fontSize = "20px";
+
+		var authorNode = document.createElement("P");
+		authorNode.innerHTML = globalData["articles"][i]["author"];
+		authorNode.style.fontFamily = "Arial";
+		authorNode.style.color = "black";
+		authorNode.style.fontSize = "15px";
+
+		var contentNode = document.createElement("P");
+		contentNode.innerHTML = globalData["articles"][i]["content"];
+		contentNode.style.fontFamily = "Arial";
+		contentNode.style.color = "black";
+		contentNode.style.fontSize = "18px";
+
+		var sourceNode = document.createElement("A");
+		var urlText = globalData["articles"][i]["url"];
+		sourceNode.innerHTML = urlText;
+		sourceNode.href = urlText;
+		sourceNode.style.fontFamily = "Arial";
+		sourceNode.style.color = "blue";
+		sourceNode.style.fontSize = "18px";
+
+		document.getElementById("content-box").appendChild(titleNode);
+		document.getElementById("content-box").appendChild(authorNode);
+		document.getElementById("content-box").appendChild(contentNode);
+		document.getElementById("content-box").appendChild(sourceNode);
+	}
+
+	var button = document.getElementById("story-button").style.display = "none";
+	var video = document.getElementById("homeVideo").style.display = "none";
 }
 
 function draw() {
