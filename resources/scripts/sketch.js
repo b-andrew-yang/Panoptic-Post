@@ -76,6 +76,7 @@ function populateBox() {
 
 	var button = document.getElementById("story-button").style.display = "none";
 	var video = document.getElementById("homeVideo").style.display = "none";
+	var homeBanner = document.getElementById("intro-banner").style.display = "none";
 }
 
 function draw() {
