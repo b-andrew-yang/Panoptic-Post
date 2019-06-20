@@ -26,7 +26,7 @@ function myFunction() {
 	// document.getElementById("demo").innerHTML = output;
 	document.getElementById("title").innerHTML = title;
 	document.getElementById("author").innerHTML = author;
-	document.getElementById("content").innerHTML = "hello";
+	document.getElementById("content").innerHTML = content;
 	document.getElementById("source").innerHTML = source;
 }
 
