@@ -34,6 +34,7 @@
 	/*border: solid;
 	color: #000000;*/
 	background: #FFFFFF;
+	z-index: 2;
 }
 
 #login-button {
@@ -189,4 +190,25 @@
 	font-family: Arial;
 	color: blue;
 	font-size: 18px;
+}
+
+#image {
+	height: 20%;
+	width: 30%;
+}
+
+#story-button {
+	position: relative;
+	margin-top: 40px;
+	margin-left: 40%;
+	font-size: 25px;
+	color: white;
+}
+
+#homeVideo {
+	position: fixed;
+	right: 0;
+	left: 0;
+	min-width: 100%;
+	max-width: 100%;
 }
