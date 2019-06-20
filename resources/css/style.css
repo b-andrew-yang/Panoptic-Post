@@ -203,6 +203,40 @@
 	margin-left: 40%;
 	font-size: 25px;
 	color: white;
+	z-index: 6;
+	opacity: 1;
+	animation: fade-out-in 3s;
+	-webkit-animation-delay: none;
+	-moz-animation-delay: none;
+	animation-delay: none;
+}
+
+@keyframes fade-out-in {
+	0% {
+		opacity: 1;
+	}
+
+	1% {
+		opacity: 0;
+	}
+
+	70% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 #homeVideo {
@@ -211,4 +245,15 @@
 	left: 0;
 	min-width: 100%;
 	max-width: 100%;
+	z-index: 5;
+}
+
+#intro-banner {
+	animation: fade-out-in 3s;
+	-webkit-animation-delay: none;
+	-moz-animation-delay: none;
+	position: absolute;
+	margin-left: 10px;
+	z-index: 10;
+	color: white;
 }
