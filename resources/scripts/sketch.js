@@ -33,6 +33,7 @@ function populateBox() {
 	var numArticles = 10;
 
 	for(i = 1; i< numArticles; i++){
+		var newLine = document.createElement("BR");
 		var titleNode = document.createElement("P");
 		titleNode.innerHTML = globalData["articles"][i]["title"];
 		titleNode.style.fontFamily = "Arial";
@@ -60,10 +61,17 @@ function populateBox() {
 		sourceNode.style.color = "blue";
 		sourceNode.style.fontSize = "18px";
 
+		var imageNode = document.createElement("IMG");
+		imageNode.src = globalData["articles"][i]["urlToImage"];
+		imageNode.style.width = "30%";
+		imageNode.style.height = "30%";
+
 		document.getElementById("content-box").appendChild(titleNode);
 		document.getElementById("content-box").appendChild(authorNode);
 		document.getElementById("content-box").appendChild(contentNode);
 		document.getElementById("content-box").appendChild(sourceNode);
+		document.getElementById("content-box").appendChild(newLine);
+		document.getElementById("content-box").appendChild(imageNode);
 	}
 
 	var button = document.getElementById("story-button").style.display = "none";
