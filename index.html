@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>	
 	<title>Panoptic Post</title>
 	<meta name="author" content="Andrew Yang">
 	<meta name="author" content="Kibae Kim">
-	<meta http-equiv="content-language" conent="en-us"/>
+	<meta http-equiv="content-language" content="en-us">
 
-	<link rel="stylesheet" href="./resources/css/style.css" type="text/css" >
+	<link rel="stylesheet" href="./resources/css/style.css" type="text/css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<script src="./p5/p5.min.js"></script>
 	<script src="./p5/addons/p5.dom.min.js"></script>
@@ -19,36 +17,35 @@
 
 <body>
 	<h2 id="intro-banner">Welcome to Panoptic Post</h2>
+
+	<!-- The video for when the page first loads -->
 	<video autoplay muted loop id="homeVideo">
 		<source src="./images/World.mp4" type="video/mp4">
 	</video>
+
 	<header role="banner" id="PP-header">
 		<div class="container">
 			<div class="topnav">
 				<a href="#home" id="home-button">Panoptic Post</a>
-				<!--<a href="#login" id="login-button">Login/Register</a>-->
-				<!--<a href="#register">Register</a>-->
-				<!--<div class="search-container">
-					<form action="/actionpage.php">
-						<input type="text" placeholder="Search..." name="search" id="search-bar">
-						<button type="submit" id="search-button"><i class="material-icons">search</i></button>
-					</form>-->
 				<form action="/loginpage.php">
-					<button type="button" id="login-button"><i class="material-icons">account_box</i></button>
+					<button type="button" id="login-button">
+						<i class="material-icons">account_box</i>
+					</button>
 				</form>
-				<form action="./php/search_action.php">
+				<form action="./php/search_action.php" method="get">
 					<input type="text" name="search">
+					<input type="submit">
 				</form>	
 			</div>
-		</div>     
+		</div>
 		<div class="container">
 			<div class="subject-nav">
 				<a href="#world">World</a>
 				<a href="#us">U.S.</a>
 				<a href="#politics">Politics</a>
-				<a href="#business">Business</a>
-				<a href="#science">Science</a>
-				<a href="#sports">Sports</a>
+				<a href="#business" onclick="populateBox('business')">Business</a>
+				<a href="#science" onclick="populateBox('science')">Science</a>
+				<a href="#sports" onclick="populateBox('sports')">Sports</a>
 				<a href="#travel">Travel</a>
 				<button type="button" id="login-button">Login/Register</button>
 			</div>
@@ -62,7 +59,7 @@
 			</p>
 		</div>
 		<div class="row content" id="content-box">
-			<a href="#start-news" onclick="populateBox()" id="story-button">See Today's Top Stories</a>
+			<a href="#start-news" onclick="populateBox('trending')" id="story-button">See Today's Top Stories</a>
 		</div>
 		<div class="row footer">
 			<p>
@@ -70,5 +67,6 @@
 			</p>
 		</div>
 	</div>
+
 </body>
 </html>
