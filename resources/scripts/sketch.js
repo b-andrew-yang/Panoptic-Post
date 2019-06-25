@@ -22,6 +22,11 @@ function populateBox(category){
 		url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=9d0061d2a21f43efab81299a242f0c68" + "&category=" + category;	
 	updateGlobalData(url);
 
+	const elem = document.querySelector('#content-box');
+	if(elem.childNodes.length != 0){
+		removeAllChildren(elem);
+	}
+
 	var num_articles = 10;
 	var articles = [];
 
@@ -164,3 +169,18 @@ function doSearch(search_query){
 function updateGlobalData(url){
 	loadJSON(url, gotData);
 }
+
+// removeAllChildren(elementID) removes all children of 
+// element "element" from the document
+// element can be fed to this function using 
+//  	var element = document.querySelector(elementID);
+function removeAllChildren(element){
+	var child = element.lastElementChild;
+	while(child){
+		element.removeChild(child);
+		child = element.lastElementChild;
+	}
+} 
+
+
+
