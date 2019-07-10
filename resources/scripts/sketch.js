@@ -11,8 +11,6 @@ function gotData(data){
 	console.log(data);
 }
 
-
-
 function populateBox(category){
 
 	let url;
