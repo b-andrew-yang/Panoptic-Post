@@ -24,7 +24,6 @@ function gotData(data){
 	globalData = data;
 	console.log(data);
 
-
 	populateBox2();
 }
 
@@ -43,6 +42,7 @@ function populateBox(category){
 		temp_url = doSearch(category);
 	}
 
+	updateGlobalData(url);
 	url = temp_url;
 	//setup();
 }
@@ -52,6 +52,7 @@ function populateBox2(){
 	console.log(globalData);
 	var num_articles = 10;
 	var articles = [];
+
 
 	// Creating an array of article objects
 	for(i=0; i<num_articles; i++){
