@@ -42,9 +42,14 @@ function populateBox(category){
 		temp_url = doSearch(category);
 	}
 
-	updateGlobalData(url);
+	const elem = document.querySelector('#content-box');
+	if(elem.childNodes.length != 0){
+		removeAllChildren(elem);
+	}
+
+	//updateGlobalData(url);
 	url = temp_url;
-	//setup();
+	setup();
 }
 
 function populateBox2(){
