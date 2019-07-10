@@ -157,14 +157,17 @@
 	   		flex-shrink: 1;
 	   		flex-basis: auto;
 	*/
+	margin-left: 10px;
 }
 
 .box .row.content {
 	flex: 1 1 auto;
+	margin-left: 10px;
 }
 
 .box .row.footer {
 	flex: 0 1 40px;
+	margin-left: 10px;
 }
 
 #title {
