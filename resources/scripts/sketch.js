@@ -42,9 +42,9 @@ function populateBox(category){
 		temp_url = doSearch(category);
 	}
 
-	updateGlobalData(url);
+	//updateGlobalData(url);
 	url = temp_url;
-	//setup();
+	setup();
 }
 
 function populateBox2(){
