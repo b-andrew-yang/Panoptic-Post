@@ -10,27 +10,18 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-	<script src="../p5/p5.min.js"></script>
-	<script src="../p5/addons/p5.dom.min.js"></script>
-	<script src="../resources/scripts/sketch.js"></script> 
+	<script src="./p5/p5.min.js"></script>
+	<script src="./p5/addons/p5.dom.min.js"></script>
+	<script src="./resources/scripts/sketch.js"></script> 
 </head>
 
 <body>
-	<div class="row content" id="content-box">
-		<script>
-			// doSearch("<?php echo $_GET['search'] ?>");
-			populateBox("<?php echo $_GET['search'] ?>");
-		</script>
-		<!-- <a href="#start-news" onclick="populateBox( <?php urldecode($_GET['search']) ?> )" id="story-button">See Today's Top Stories</a> -->
-	</div>
-</body>
-</html>
+	<h2 id="intro-banner">Welcome to Panoptic Post</h2>
 
-<!-- ----------------------------------------------------------------- -->
-
-
-
-<!-- <body>
+	<!-- The video for when the page first loads -->
+	<video autoplay muted loop id="homeVideo">
+		<source src="./images/World.mp4" type="video/mp4">
+	</video>
 
 	<header role="banner" id="PP-header">
 		<div class="container">
@@ -78,4 +69,4 @@
 	</div>
 
 </body>
-</html> -->
+</html>
