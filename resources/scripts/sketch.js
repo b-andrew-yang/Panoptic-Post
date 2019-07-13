@@ -66,8 +66,11 @@ function populateBox2(){
 			author: globalData["articles"][i]["author"],
 			content: globalData["articles"][i]["content"],
 			url: globalData["articles"][i]["url"],
-			img: globalData["articles"][i]["urlToImage"]
+			img: globalData["articles"][i]["urlToImage"],
+			source: globalData["articles"][i]["source"]["name"]
 		};
+		var readMore = "Read More";
+		article.content = article.content.replace(/ *\[[^\]]*]/g, readMore.link(article.url));
 		articles.push(article);
 	}
 	outputArticles(articles);
@@ -80,44 +83,40 @@ function outputArticles(articles){
 		var div = document.createElement("DIV");
 		div.className = 'col-md-4 col-lg-4 col-xl-4 row content';
 
-		var titleNode = document.createElement("P");
-		titleNode.setAttribute('id', 'title');
-		titleNode.innerHTML = article.title + "<br>";
-		//document.getElementById("content-box").appendChild(titleNode);
-		div.appendChild(titleNode);
-		
-		var authorNode = document.createElement("P");
-		authorNode.setAttribute('id', 'author');
-		authorNode.innerHTML = article.author;
-		//document.getElementById("content-box").appendChild(authorNode);
-		div.appendChild(authorNode);
-
-		var contentNode = document.createElement("P");
-		contentNode.setAttribute('id', 'content');
-		contentNode.innerHTML = article.content;
-		//document.getElementById("content-box").appendChild(contentNode);
-		div.appendChild(contentNode);
-
-		var urlNode = document.createElement("A");
-		urlNode.setAttribute('id', 'url');
-		urlNode.innerHTML = article.url + "<br>";
-		urlNode.href = article.url;
-		//document.getElementById("content-box").appendChild(urlNode);
-		div.appendChild(urlNode);
-
-
 		if(article.img != null){
 			var imgNode = document.createElement("IMG");
 			imgNode.setAttribute('id', 'img');
 			imgNode.src = article.img;
-			//document.getElementById("content-box").appendChild(imgNode);
 			div.appendChild(imgNode);
 		}
+
+		var titleNode = document.createElement("P");
+		titleNode.setAttribute('id', 'title');
+		titleNode.innerHTML = article.title + "<br>";
+		div.appendChild(titleNode);
+		
+		var authorNode = document.createElement("P");
+		authorNode.setAttribute('id', 'author');
+		authorNode.innerHTML = article.author + "<br>";
+		div.appendChild(authorNode);
+
+		var urlNode = document.createElement("A");
+		urlNode.setAttribute('id', 'url');
+		urlNode.innerHTML = article.source + "<br>";
+		urlNode.href = article.url;
+		urlNode.target = "_blank"; // Opens link in new tab
+		div.appendChild(urlNode);
+
+		var contentNode = document.createElement("P");
+		contentNode.setAttribute('id', 'content');
+		contentNode.innerHTML = article.content;
+		div.appendChild(contentNode);
+
 		document.getElementById("content-box").appendChild(div);
 	})
 	var button = document.getElementById("story-button").style.display = "none";
-	var video = document.getElementById("homeVideo").style.display = "none";
-	var homeBanner = document.getElementById("intro-banner").style.display = "none";
+	// var video = document.getElementById("homeVideo").style.display = "none";
+	// var homeBanner = document.getElementById("intro-banner").style.display = "none";
 }
 
 //	doSearch(search_query) returns the url JSON data of articles that contain the words in search_query
