@@ -196,8 +196,11 @@
 }
 
 #img {
-	height: 20%;
-	width: 30%;
+	margin-top: 10px;
+	min-height: 30%;
+	min-width: 40%;
+	max-height: 40%;
+	max-width: 55%;
 }
 
 #story-button {
