@@ -70,7 +70,8 @@ function populateBox2(){
 			source: globalData["articles"][i]["source"]["name"]
 		};
 		var readMore = "Read More";
-		article.content = article.content.replace(/ *\[[^\]]*]/g, readMore.link(article.url));
+		if (article.content != null)
+			article.content = article.content.replace(/ *\[[^\]]*]/g, readMore.link(article.url));
 		articles.push(article);
 	}
 	outputArticles(articles);
@@ -94,6 +95,13 @@ function outputArticles(articles){
 		titleNode.setAttribute('id', 'title');
 		titleNode.innerHTML = article.title + "<br>";
 		div.appendChild(titleNode);
+
+		if (article.author != null){
+			var authorNode = document.createElement("P");
+			authorNode.setAttribute('id', 'author');
+			authorNode.innerHTML = article.author + "<br>";
+			div.appendChild(authorNode);
+		}
 		
 		var authorNode = document.createElement("P");
 		authorNode.setAttribute('id', 'author');
@@ -146,7 +154,9 @@ function updateGlobalData(url){
 }
 
 function removeAllChildren(element){
+
 	var child = element.lastElementChild;
+
 	while(child){
 		element.removeChild(child);
 		child = element.lastElementChild;
