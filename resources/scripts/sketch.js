@@ -55,12 +55,15 @@ function populateBox(category){
 function populateBox2(){
 
 	console.log(globalData);
-	var num_articles = 10;
+	var num_articles = 20;
 	var articles = [];
 
 
 	// Creating an array of article objects
 	for(i=0; i<num_articles; i++){
+		if(globalData["articles"][i]["content"] == null){
+			i++;
+		}
 		var article = {
 			title: globalData["articles"][i]["title"],
 			author: globalData["articles"][i]["author"],
@@ -81,50 +84,86 @@ function populateBox2(){
 function outputArticles(articles){
 
 	articles.forEach(function(article){
+		if(article.source === "Youtube.com"){
+			appendYouTube(article);
+			return;
+		}
+
 		var div = document.createElement("DIV");
-		div.className = 'col-md-4 col-lg-4 col-xl-4 row content';
+		div.className = 'col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 row-content';
 
 		if(article.img != null){
 			var imgNode = document.createElement("IMG");
-			imgNode.setAttribute('id', 'img');
+			imgNode.setAttribute('class', 'img');
 			imgNode.src = article.img;
 			div.appendChild(imgNode);
 		}
 
 		var titleNode = document.createElement("P");
-		titleNode.setAttribute('id', 'title');
+		titleNode.setAttribute('class', 'title');
 		titleNode.innerHTML = article.title + "<br>";
 		div.appendChild(titleNode);
 
 		if (article.author != null){
 			var authorNode = document.createElement("P");
-			authorNode.setAttribute('id', 'author');
+			authorNode.setAttribute('class', 'author');
 			authorNode.innerHTML = article.author + "<br>";
 			div.appendChild(authorNode);
 		}
 		
-		var authorNode = document.createElement("P");
+		/* var authorNode = document.createElement("P");
 		authorNode.setAttribute('id', 'author');
 		authorNode.innerHTML = article.author + "<br>";
-		div.appendChild(authorNode);
+		div.appendChild(authorNode);*/
 
 		var urlNode = document.createElement("A");
-		urlNode.setAttribute('id', 'url');
+		urlNode.setAttribute('class', 'url');
 		urlNode.innerHTML = article.source + "<br>";
 		urlNode.href = article.url;
 		urlNode.target = "_blank"; // Opens link in new tab
 		div.appendChild(urlNode);
 
 		var contentNode = document.createElement("P");
-		contentNode.setAttribute('id', 'content');
+		contentNode.setAttribute('class', 'content');
 		contentNode.innerHTML = article.content;
 		div.appendChild(contentNode);
 
+		var commentNode = document.createElement("A");
+		commentNode.setAttribute('class', 'comment');
+		commentNode.setAttribute('href', '#');
+		//commentNode.onclick = loadComments(div);
+		commentNode.innerHTML = "Comments";
+		div.appendChild(commentNode);
+
 		document.getElementById("content-box").appendChild(div);
+
 	})
-	var button = document.getElementById("story-button").style.display = "none";
-	// var video = document.getElementById("homeVideo").style.display = "none";
-	// var homeBanner = document.getElementById("intro-banner").style.display = "none";
+}
+
+function appendYouTube(article){
+	var div = document.createElement("DIV");
+	div.className = 'col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 row-content';
+
+	var titleNode = document.createElement("P");
+	titleNode.setAttribute('class', 'title');
+	titleNode.innerHTML = article.title + "<br>";
+	div.appendChild(titleNode);
+
+	var urlNode = document.createElement("A");
+	urlNode.setAttribute('class', 'url');
+	urlNode.innerHTML = article.source + "<br>";
+	urlNode.href = article.url;
+	urlNode.target = "_blank";
+	div.appendChild(urlNode);
+
+	var videoNode = document.createElement('iframe');
+	videoNode.setAttribute('class', 'youTubeVideo');
+	var embedURL = article.url.replace("watch?v=", "embed/");
+	videoNode.setAttribute('src', embedURL);
+	div.appendChild(videoNode);
+
+	document.getElementById("content-box").appendChild(div);
+
 }
 
 //	doSearch(search_query) returns the url JSON data of articles that contain the words in search_query
@@ -145,12 +184,30 @@ function doSearch(search_query){
 	return temp_url;
 }
 
+function loadComments(article){
+	const elem = document.querySelector('#content-box');
+	if(elem.childNodes.length != 0){
+		removeAllExcept(elem, article);
+	}
+}
+
 //	updateGlobalData(url) sets globalData to the new URL
 //	@params :
 //		url : string
 function updateGlobalData(url){
 	console.log(url);
 	loadJSON(url, gotData);
+}
+
+function removeAllExcept(element, article){
+	var child = element.lastElementChild;
+
+	while(element.childElementCount > 1){
+		if(article != child){
+			element.removeChild(child);
+			child = element.lastElementChild;
+		}
+	}
 }
 
 function removeAllChildren(element){
